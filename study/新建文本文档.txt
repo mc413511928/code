@@ -1,0 +1,117 @@
+                 html5第一天
+1.语义化标签
+	<header>头部标签
+	<nav>导航标签
+	<section>块级标签
+	article 内容标签
+	<aside>侧边栏标签
+	<footer>尾部标签
+多媒体标签
+	<audio>音频标签
+	支持ogg /mp3/wav格式
+	audio常见属性
+		controls播放控件
+		loop无线循环
+		antoplay自动播放
+		muted静音播放
+谷歌浏览器把autoplay属性给禁用了
+2因为不同浏览器支持不同格式我们采取的解决方案我们为这个音频准备多个格式
+		<audio controls="controls">
+    <source src="media/snow.mp3" type="audio/mpeg" />
+    <source src="media/snow.ogg" type="audio/ogg" />
+3视频标签
+	<video>
+	   <!-- 谷歌浏览器把自动播放功能给禁用了 有解决方案： 给视频添加静音属性 -->
+    <video autoplay="autoplay" muted="muted">
+        <source src="media/video.mp4" type="video/mp4" />
+        <source src="media/video.ogg" type="video/ogg" />
+        您的浏览器太low了，不支持播放此视频
+    </video>
+和音频属性一样的！
+谷歌浏览器禁止了自动播放视频属性，如何给谷歌浏览器自动播放视频，我们给视频添加静音播放属性就可以了！muted
+	视频标签是重点，我们经常设置自动播放，不使用controls控件，循环和设置大小属性
+input标签
+	1.3.1 H5新增表单
+
+新增表单类型如下：
+
+  属性值          	说明                          
+  type="email" 	限制用户输入必须为Email类型            
+  type="url"   	限制用户输入必须为URL类型              
+  type="date"  	限制用户输入必须为日期类型               
+  type="time"  	限制用户输入必须为时间类型               
+  type="month" 	限制用户输入必须为月类型                
+  type="week"  	限制用户输入必须为周类型                
+  type="number"	限制用户输入必须为数字类型               
+  type="tel"   	手机号码（不限制只能输入数字，因为有些特殊电话会有符号）
+  type="search"	搜索框                         
+  type="color" 	生成一个颜色选择表单                
+  
+placeholder 占位符，提示文本 
+autofocus 自动聚焦
+autocomplete 
+multiple可以多选文件提交 用于文件域
+属性选择器
+属性选择器的权重是10
+	元素[属性]{
+		}
+^以某个值开头的
+$以某个值什么结尾的
+*可以在任意值的
+4结构伪类选择器
+
+E;nth-child(n)
+	n的取值
+	可以是基数odd,偶数是even
+	如果是数字就是选择第几个
+	如果是公式n是从0开始的
+	第0个元素或者超出了元素的个数会被忽略
+	nth-child(n)  选择 父元素里面的 第 n个孩子， 它不管里面的孩子是否同一种类型 
+of-type选择指定的类型元素
+nth-of-type(n)
+	nth-of-type(n) 选择 父元素里边的 第n个同类型的孩子，孩子必须是同类型
+     E:nth-child(n)  n: E父元素中所有儿子进行排序
+
+     E:nth-of-type(n)  n: E父元素中E儿子进行排序   
+结构伪类选择器的权重值也是10
+伪元素选择器
+	- before 和 after 必须有 content 属性 
+- before 在内容的前面，after 在内容的后面
+- before 和 after 创建一个元素，但是属于行内元素。
+1.6.3. 伪元素的注意事项
+
+- before 和 after 必须有 content 属性 
+- before 在内容的前面，after 在内容的后面
+- before 和 after 创建一个元素，但是属于行内元素。
+- 因为在 dom 里面看不见刚才创建的元素，所以我们称为伪元素
+- 伪元素和标签选择器一样，权重为 1
+
+想要让伪元素有效，必须遵循以下注意事项
+
+1. 伪元素只能给双标签加 不能给单标签加
+2. 伪元素的冒号前不能有空格 如 E    ::before  这个写法是错误的
+3. 伪元素里面必须写上属性 content:"";
+input  image不能添加伪元素的
+2D转换
+盒子的移动有三种方式：
+	1定位  盒子的外边距  2D转换
+	translate最大的优点不会影响其他元素的位置
+	对于行内行内元素是没有效果的
+小结:
+
+1. translate中的百分比单位是相对于自身元素的  translate:(50%,50%);
+2. translate类似定位，不会影响到其他元素的位置
+3. 对行内标签没有效果
+
+
+
+
+
+
+
+
+
+
+
+
+

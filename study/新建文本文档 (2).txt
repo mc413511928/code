@@ -1,0 +1,36 @@
+2D旋转
+transform: rotate
+		1单位deg度数，逆时针用负数，
+		2搭配transition过渡效果更佳明显，谁做过渡给谁加！
+
+transform-origin以转换中心（旋转中心点）
+		1 默认的是50%  50%，相当于是center. 
+		2可以跟方位名词
+		3，空格隔开，还可以设置精确的位置，
+scale缩放
+		1其中x,y是用逗号隔开的
+		2里面的数字不跟单位的，1就 是1倍，不放大，2就是2倍，
+		3同比例缩放同事修改宽度和高度，我们有简单的写法，一个数字的时候，第二个参数和第一个一样的
+		4我们可以进行缩小，小于1就是缩放，
+		5scale的优势，不会影响其他盒子，可以设置中心点。
+2D转换综合写法的顺序问题
+		1同时又位移和其他属性，我们需要把位移放在最前面，
+
+动画
+		1 @keyframes move {
+            /* 开始状态 */
+            0% {
+                transform: translateX(0px);
+            }
+            /* 结束状态 */
+            100% {
+                transform: translateX(1000px);
+            }
+        }
+		2 animation-duration动画持续时间！！
+		3from和to相当于0%和100%，
+		4可以做多个动
+动画的常见属性
+		1Iteration重复，count次数，direction方向，
+step
+	1就是分几步来完成呢个这个动画，有了step就不要写ease或者linear
